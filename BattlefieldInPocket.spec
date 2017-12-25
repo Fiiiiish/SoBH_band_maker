@@ -1,11 +1,10 @@
 # -*- mode: python -*-
 from kivy.deps import sdl2, glew
-
 block_cipher = None
 
 
 a = Analysis(['main.py'],
-             pathex=['C:\\SoBH_band_maker_app'],
+             pathex=['D:\\Projet\\SoBH_band_maker'],
              binaries=[],
              datas=[],
              hiddenimports=[],
@@ -20,17 +19,16 @@ pyz = PYZ(a.pure, a.zipped_data,
 exe = EXE(pyz,
           a.scripts,
           exclude_binaries=True,
-          name='touchtracer',
+          name='BattlefieldInPocket',
           debug=False,
           strip=False,
           upx=True,
-          console=True )
-coll = COLLECT(exe,Tree('C:\SoBH_band_maker_app'),
+          console=True)
+coll = COLLECT(exe, Tree('kv_files\\'),
                a.binaries,
                a.zipfiles,
                a.datas,
 			   *[Tree(p) for p in (sdl2.dep_bins + glew.dep_bins)],
-			   
                strip=False,
                upx=True,
-               name='touchtracer')
+               name='BattlefieldInPocket')
