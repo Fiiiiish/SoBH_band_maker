@@ -12,6 +12,7 @@ from kivy.config import Config
 
 Config.read("kv_files/config.ini")
 
+
 class SoBHBandMaker(App):
     def build(self):
         self.icon = "data/iconApp.png"

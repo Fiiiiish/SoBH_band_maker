@@ -2,7 +2,6 @@ from kivy.app import App
 from kivy.uix.gridlayout import GridLayout
 from kivy.lang import Builder
 from kivy.uix.popup import Popup
-from kivy.uix.button import Button
 import bandcl
 import gui_edit_bandkv
 import pickle

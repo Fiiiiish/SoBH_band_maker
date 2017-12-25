@@ -12,7 +12,7 @@ class TopMenu(GridLayout):
         self.cols = 5
         self.rows = 1
         self.size_hint = [1, None]
-        self.height = '30dp'
+        self.height = '40dp'
         self.padding = [5, 5, 5, 0]
 
         my_bands_button = ToggleButton(text="My Bands", group="menu", on_press=self.click_my_bands, state='down')
