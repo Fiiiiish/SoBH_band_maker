@@ -1,0 +1,17 @@
+<MyCollectionPage>:
+    cols: 1
+    spacing: '10dp'
+
+    # first line: model name & pers & cost
+    Button:
+        id: but_add_model
+        text: "Create model..."
+        size_hint: [1, None]
+        height: '40dp'
+    ScrollView:
+        GridLayout:
+            id: lay_list_model
+            size_hint: [1, None]
+            height: self.minimum_height
+            cols: 1
+            spacing: '10dp'

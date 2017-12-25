@@ -1,0 +1,21 @@
+<SelectPopup>:
+    GridLayout:
+        cols: 1
+        # button
+        GridLayout:
+            cols: 1
+            size_hint: [1, None]
+            padding: [0, 0, 0, '20dp']
+            height: self.minimum_height
+            Button:
+                text: "CANCEL"
+                id: but_cancel
+                size_hint: [1, None]
+                height: '40dp'
+        ScrollView:
+            GridLayout:
+                id: lay_list
+                size_hint: [1, None]
+                height: self.minimum_height
+                cols: 1
+                spacing: '10dp'

@@ -1,0 +1,75 @@
+<EditBand>:
+    cols: 1
+
+    # button
+    GridLayout:
+        cols: 3
+        size_hint: [1, None]
+        padding: [0, 0, 0, '15dp']
+        height: self.minimum_height
+        Button:
+            text: "OK"
+            id: but_ok
+            size_hint: [0.5, None]
+            height: '40dp'
+        Button:
+            text: "  Import model\nfrom collection"
+            id: but_import
+            size_hint: [0.5, None]
+            height: '40dp'
+        # Button:
+            # text: "Print band"
+            # id: but_print
+            # size_hint: [0.5, None]
+            # height: '40dp'
+
+    # first line: band name & cost
+    GridLayout:
+        cols: 2
+        size_hint: [1, None]
+        height: self.minimum_height
+        spacing: '20dp'
+        padding: [0, 0, 0, '15dp']
+        TextInput:
+            id: inp_name
+            text: "Enter band name"
+            size_hint: [1, None]
+            height: self.minimum_height
+        Label:
+            id: lbl_total_cost
+            text: "000 pts"
+            size_hint: [None, 1]
+            width: self.texture_size[0]
+    #second line: spacer, number of models, cost of personalities
+    GridLayout:
+        cols: 3
+        size_hint: [1, None]
+        height: self.minimum_height
+        spacing: '20dp'
+        padding:[0,0,0,10]
+        Label:
+            id: lbl_nb_model
+            text: "x models"
+            size_hint: [None, 1]
+            width: self.texture_size[0]
+        Label:
+            text:""
+        Label:
+            id: lbl_pers_cost
+            text: "Cost of Personalities:   000 pts"
+            size_hint: [None, 1]
+            width: self.texture_size[0]
+    # third line: list of models
+    GridLayout:
+        cols: 1
+        id: grid_lay
+        size_hint: [1, None]
+        height: self.minimum_height
+        Label:
+            size_hint: [1, None]
+            id: lbl_list_models
+            text: ""
+            height: self.texture_size[1]
+            text_size: self.width, None
+            font_size: "13sp"
+

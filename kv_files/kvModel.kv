@@ -1,0 +1,229 @@
+
+
+<EditModelLayout>:
+    cols: 1
+    size_hint: [1, None]
+    height: self.minimum_height
+    spacing: '20dp'
+
+    # first line: model name & pers & cost
+    GridLayout:
+        cols: 2
+        size_hint: [1, None]
+        height: self.minimum_height
+        spacing: '20dp'
+        TextInput:
+            id: inp_name
+            text: "Enter model name"
+            size_hint: [1, None]
+            height: self.minimum_height
+        Label:
+            id: lbl_cost
+            text: "(Personality)     00 pts"
+            size_hint: [None, 1]
+            width: self.texture_size[0]
+
+
+    # second line: quality & combat
+    GridLayout:
+        cols:2
+        size_hint: [1, None]
+        height: self.minimum_height
+        # second line: quality
+        GridLayout:
+            cols: 3
+            spacing: '10dp'
+            size_hint: [1,None]
+            height: '40dp'
+            Label:
+                text: "Quality:"
+                size_hint: [None, 1]
+                width: self.texture_size[0]
+            Label:
+                id: lbl_quality
+                text: "3+"
+                size_hint: [None, 1]
+                width: self.texture_size[0]
+            GridLayout:
+                cols: 2
+                Button:
+                    id: but_quality_plus
+                    size_hint: [None, None]
+                    size: ['30dp', '30dp']
+                    text: "+"
+                Button:
+                    id: but_quality_minus
+                    size_hint: [None, None]
+                    size: ['30dp', '30dp']
+                    text: "-"
+        # second line: combat
+        GridLayout:
+            cols: 3
+            spacing: '10dp'
+            size_hint: [1,None]
+            height: '20dp'
+            Label:
+                text: "Combat:"
+                size_hint: [None, 1]
+                width: self.texture_size[0]
+            Label:
+                id: lbl_combat
+                text: "4"
+                size_hint: [None, 1]
+                width: self.texture_size[0]
+            GridLayout:
+                cols: 2
+                Button:
+                    id: but_combat_plus
+                    size_hint: [None, None]
+                    size: ['30dp', '30dp']
+                    text: "+"
+                Button:
+                    id: but_combat_minus
+                    size_hint: [None, None]
+                    size: ['30dp', '30dp']
+                    text: "-"
+
+
+    # Third line: capacities
+    Label:
+        id: list_capacities
+        size_hint: [1, None]
+        height: self.texture_size[1]
+        text_size: self.width, None
+        halign: "left"
+
+
+<CapacityDisplayLabel>:
+    size_hint: [None, None]
+    size: self.texture_size
+
+
+# ---------------------------------------------------------------------------------------
+
+<DisplayModelLayout>:
+    cols: 1
+    size_hint: [1, None]
+    height: self.minimum_height
+    canvas:
+        Color:
+            rgb: 0.2,0.2,0.2
+        Rectangle:
+            size: self.size
+            pos: self.pos
+
+    GridLayout:
+        cols: 2
+        size_hint: [1, None]
+        height: self.minimum_height
+        spacing: '10dp'
+        # model descr
+        GridLayout:
+            cols: 1
+            size_hint: [0.8, None]
+            height: self.minimum_height
+            # first line: model name & pers & cost
+            GridLayout:
+                cols: 2
+                size_hint: [1, None]
+                height: self.minimum_height
+                Label:
+                    id: lbl_name
+                    text: "ModelName"
+                    size_hint: [1, None]
+                    text_size: self.width, None
+                    height: self.texture_size[1]
+                    halign: "left"
+                Label:
+                    id: lbl_cost
+                    text: "(Personality)     00 pts"
+                    size_hint: [None, 1]
+                    text_size: self.size
+                    width: '75dp'
+                    halign: "right"
+                    valign: 'top'
+
+            # second line: quality & combat
+            GridLayout:
+                cols:2
+                size_hint: [1, None]
+                height: self.minimum_height
+                # second line: quality
+                GridLayout:
+                    cols: 2
+                    spacing: '10dp'
+                    size_hint: [1,None]
+                    height: '40dp'
+                    Label:
+                        text: "Quality:"
+                        size_hint: [None, 1]
+                        width: self.texture_size[0]
+                    Label:
+                        id: lbl_quality
+                        text: "3+"
+                        size_hint: [None, 1]
+                        width: self.texture_size[0]
+                # second line: combat
+                GridLayout:
+                    cols: 2
+                    spacing: '10dp'
+                    size_hint: [1,None]
+                    height: '40dp'
+                    Label:
+                        text: "Combat:"
+                        size_hint: [None, 1]
+                        width: self.texture_size[0]
+                    Label:
+                        id: lbl_combat
+                        text: "4"
+                        size_hint: [None, 1]
+                        width: self.texture_size[0]
+
+
+        # buttons
+        GridLayout:
+            cols:1
+            size_hint: [None, 1]
+            width: self.minimum_width
+            GridLayout:
+                cols: 3
+                size_hint: [None, None]
+                width: self.minimum_width
+                height: '40dp'
+                spacing: '2dp'
+                Button:
+                    id: but_edit
+                    size_hint: [None, None]
+                    size: ['40dp', '40dp']
+                    Image:
+                        source: "data/edit.png"
+                        size: ['38dp', '38dp']
+                        center_x: self.parent.center_x
+                        center_y: self.parent.center_y
+                Button:
+                    id: but_copy
+                    size_hint: [None, None]
+                    size: ['40dp', '40dp']
+                    Image:
+                        source: "data/copy.png"
+                        size: ['38dp', '38dp']
+                        center_x: self.parent.center_x
+                        center_y: self.parent.center_y
+                Button:
+                    id: but_delete
+                    size_hint: [None, None]
+                    size: ['40dp', '40dp']
+                    Image:
+                        source: "data/delete.png"
+                        size: ['38dp', '38dp']
+                        center_x: self.parent.center_x
+                        center_y: self.parent.center_y
+
+    # Third line: capacities
+    Label:
+        id: list_capacities
+        size_hint: [1, None]
+        height: self.texture_size[1]
+        text_size: self.width, None
+        halign: "left"
+        font_size: '13sp'

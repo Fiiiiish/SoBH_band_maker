@@ -1,0 +1,29 @@
+<CapacityWidget>:
+    cols: 3
+    size_hint: [None, None]
+    width: '150dp'
+    height: '35dp'
+    Label:
+        id: lbl_name
+        text: ""
+        bold: False
+        text_size: self.size
+        halign: "left"
+        valign: "middle"
+    Label:
+        id: lbl_cost
+        text: ""
+        size_hint: [None, 1]
+        width: '15dp'
+    GridLayout:
+        cols: 1
+        size_hint: [None, 1]
+        size: ['25dp', '25dp']
+        CheckBox:
+            id: chckbox
+
+<CapacityGrid>:
+    spacing: ['20dp', 0]
+    padding: ['5dp', 0, '5dp', 0]
+    size_hint: [1, None]
+    height: self.minimum_height

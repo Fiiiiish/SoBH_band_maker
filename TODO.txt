@@ -1,0 +1,16 @@
+Edit band on click
+create band button on bottom so insert space after last element
+replace create band with choice of several "armies"
+
+
+id on my collection
+
+fork BB:
+my collection becomes choice of recrutable players per team (non editable, non add)
+when create, choice of a player = default carac and related list of options
+
+rules: ok, but add on swipe:
+- rules pages (html page...)
+- a full page to select band/team/army
+- one  page by band/team/army item
+

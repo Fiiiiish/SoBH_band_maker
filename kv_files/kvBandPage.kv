@@ -1,0 +1,153 @@
+<BandPage>:
+    cols: 1
+    # button
+    GridLayout:
+        cols: 1
+        size_hint: [1, None]
+        padding: [0, 0, 0, '10dp']
+        height: self.minimum_height
+        Button:
+            text: "Create band..."
+            id: but_create_band
+            size_hint: [1, None]
+            height: '40dp'
+    ScrollView:
+        GridLayout:
+            id: lay_list_band
+            size_hint: [1, None]
+            height: self.minimum_height
+            cols: 1
+            spacing: '10dp'
+
+
+<BandDisplay>:
+    cols:1
+    size_hint: [1, None]
+    height: self.minimum_height
+    canvas:
+        Color:
+            rgb: 0.2,0.2,0.2
+        Rectangle:
+            size: self.size
+            pos: self.pos
+
+    GridLayout:
+        cols: 2
+        size_hint: [1, None]
+        height: self.minimum_height
+        spacing: '10dp'
+        GridLayout:
+            cols: 1
+            id: lay_grid
+            size_hint: [1, None]
+            height: self.minimum_height
+            # first line: band name & nb models & total cost
+            GridLayout:
+                cols: 2
+                size_hint: [1, None]
+                height: self.minimum_height
+                Label:
+                    id: lbl_band_name
+                    text: "Band Name"
+                    size_hint: [1, None]
+                    text_size: self.width, None
+                    height: self.texture_size[1]
+                    halign: "left"
+                Label:
+                    id: lbl_total_cost
+                    text: "Total cost: 000 pts"
+                    size_hint: [None, 1]
+                    text_size: self.size
+                    width: '50dp'
+                    halign: "right"
+                    valign: 'top'
+
+            # second line: perso cost
+            GridLayout:
+                cols: 3
+                size_hint: [1, None]
+                height: self.minimum_height
+                Label:
+                    text: "List of models:"
+                    id: lbl_nb_models
+                    size_hint: [None, None]
+                    size: self.texture_size
+                Label:
+                    text: ""
+                Label:
+                    id: lbl_personalities_cost
+                    text: "Cost of personalities: xx pts"
+                    size_hint: [None, None]
+                    size: self.texture_size
+
+        # buttons
+        GridLayout:
+            cols: 1
+            size_hint: [None, 1]
+            width: '120dp'
+            GridLayout:
+                cols:3
+                size_hint: [None, None]
+                width: self.minimum_width
+                height: '40dp'
+                spacing: '2dp'
+                Button:
+                    id: but_edit
+                    size_hint: [None, None]
+                    size: ['40dp', '40dp']
+                    Image:
+                        source: "data/edit.png"
+                        size: ['38dp', '38dp']
+                        center_x: self.parent.center_x
+                        center_y: self.parent.center_y
+                Button:
+                    id: but_copy
+                    size_hint: [None, None]
+                    size: ['40dp', '40dp']
+                    Image:
+                        source: "data/copy.png"
+                        size: ['38dp', '38dp']
+                        center_x: self.parent.center_x
+                        center_y: self.parent.center_y
+                Button:
+                    id: but_delete
+                    size_hint: [None, None]
+                    size: ['40dp', '40dp']
+                    Image:
+                        source: "data/delete.png"
+                        size: ['38dp', '38dp']
+                        center_x: self.parent.center_x
+                        center_y: self.parent.center_y
+
+    # model list
+    GridLayout:
+        cols: 1
+        size_hint: [1, None]
+        height: self.minimum_height
+        Label:
+            id: lbl_model_list
+            size_hint: [1, None]
+            text: "bla ; bhe"
+            text_size: self.width, None
+            height: self.texture_size[1]
+            font_size: '13sp'
+
+
+
+<ValidPopup>:
+    title: "Please confirm..."
+    size_hint: [0.9, 0.5]
+    GridLayout:
+        cols: 1
+        Label:
+            text: "Do you really want \nto delete the band ?"
+        GridLayout:
+            cols:2
+            size_hint: [1, None]
+            height: '40dp'
+            Button:
+                id: ok_but
+                text: "OK"
+            Button:
+                id: cancel_but
+                text: "CANCEL"

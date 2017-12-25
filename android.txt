@@ -1,0 +1,3 @@
+title=Battlefield in Pocket - SoBH
+author=C. FISCHER
+orientation=portrait

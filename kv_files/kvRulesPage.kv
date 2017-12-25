@@ -1,0 +1,50 @@
+<RuleText>:
+    cols: 1
+    size_hint: [1, None]
+    height: self.minimum_height
+    Label:
+        id: lbl_title
+        size_hint: [1, None]
+        text: ""
+        bold: True
+        text_size: self.width, None
+        height: self.texture_size[1]
+    Label:
+        id: lbl_text
+        size_hint: [1, None]
+        text: ""
+        text_size: self.width, None
+        height: self.texture_size[1]
+
+<CapaList>:
+    cols: 1
+    size_hint: [1, None]
+    height: self.minimum_height
+    spacing: '15dp'
+
+<RulePage>:
+    cols: 1
+    padding: ['10dp', 0, '10dp', '10dp']
+    spacing: '15dp'
+    GridLayout:
+        cols: 4
+        size_hint: [1, None]
+        height: '35dp'
+        spacing: '20dp'
+        Label:
+            text: "Short text"
+            size_hint: [None, 1]
+            width: self.texture_size[0]
+        Switch:
+            id: switch_text
+            size_hint: [None, 1]
+            width: '83dp'
+        Label:
+            text: "Long text"
+            size_hint: [None, 1]
+            width: self.texture_size[0]
+        Button:
+            id: but_show_pdf
+            text: "-> PDF"
+    ScrollView:
+        id: lay_rules_text
